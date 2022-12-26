@@ -1,8 +1,12 @@
+import { useSelector } from "react-redux";
 import Task from "./Task";
-function TaskList({tasks,removeTask,doneTask}) {
-  return (
+
+function TaskList() {
+  const tasks = useSelector(state => state.data)
+  const filter = useSelector(state => state.filtredData)
+ return (
     <div className="todo-list">
-                {tasks.map(el=><Task removeTask={removeTask} doneTask={doneTask} key={el.id} el={el}/>)}
+                {filter =='ALL'?tasks.map(el=><Task key={el.id} el={el}/>):filter=='done'?tasks.filter(el=>el.status==true).map(el=><Task key={el.id} el={el}/>):tasks.filter(el=>el.status==false).map(el=><Task key={el.id} el={el}/>)}
               </div>
   );
 }

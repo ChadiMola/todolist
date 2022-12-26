@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-function AddTask({ addTask }) {
+import { useDispatch, useSelector } from "react-redux";
+import { addTask } from "../JS/Actions/action";
+function AddTask() {
+  const id = useSelector(state => state.data.length)
   const [task, setTask] = useState("");
   const [user, setUser] = useState("");
   const dispatch = useDispatch();
@@ -22,7 +24,7 @@ function AddTask({ addTask }) {
         <button
           type="button"
           className="m-1 btn btn-success"
-          onClick={task && user?() => dispatch({type:"ADD_TASK",payload:{id:5,task, user,status:false}}):null}
+          onClick={task && user?() => dispatch(addTask(id,task,user)) :null}
         >
           Add
         </button>

@@ -43,14 +43,25 @@ body{
 
 .remove-todo-item {
   color: #ccc;
-  visibility: hidden
+  visibility: hidden;
 }
 
 .remove-todo-item:hover {
   color: #ff0000
 }
+.edit-todo-item {
+  color: #ccc;
+  visibility: hidden;
+}
+
+.edit-todo-item:hover {
+  color: #4400ff
+}
 
 .todo-item:hover .remove-todo-item {
+  visibility: visible
+}
+.todo-item:hover .edit-todo-item {
   visibility: visible
 }
 
