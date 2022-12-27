@@ -1,4 +1,4 @@
-import { ADD_TASK, DONE_TASKS, UNDONE_TASKS,REMOVE_TASK,TOGGLE_TASK, ALL_TASKS,EDIT_TASK} from "../Constants/action-types";
+import { ADD_TASK, DONE_TASKS, UNDONE_TASKS,REMOVE_TASK,TOGGLE_TASK, ALL_TASKS,EDIT_TASK, SEARSH_TASK} from "../Constants/action-types";
 
 export const addTask= (id,task,user) => {
     return {
@@ -40,5 +40,11 @@ export const editTask=(id,task,user)=>{
     return{
         type: EDIT_TASK,
         payload:{id,task,user}
+    }
+}
+export const searshTask=(payload)=>{
+    return{
+        type:SEARSH_TASK,
+        payload
     }
 }

@@ -5,4 +5,5 @@ export const DONE_TASKS = 'DONE_TASKS'
 export const UNDONE_TASKS = 'UNDONE_TASKS'
 export const ALL_TASKS = 'ALL_TASKS'
 export const EDIT_TASK= 'EDIT_TASK'
+export const SEARSH_TASK ="SEARSH_TASK"
 

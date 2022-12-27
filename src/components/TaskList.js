@@ -2,7 +2,8 @@ import { useSelector } from "react-redux";
 import Task from "./Task";
 
 function TaskList() {
-  const tasks = useSelector(state => state.data)
+  const search = useSelector(state => state.search)
+  const tasks = useSelector(state => state.data).filter(el =>el.task.toLowerCase().includes(search)||el.user.toLowerCase().includes(search))
   const filter = useSelector(state => state.filtredData)
  return (
     <div className="todo-list">

@@ -5,10 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { editTask } from "../JS/Actions/action";
 
 function EditTask() {
-  const [task, setTask] = useState("");
-  const [user, setUser] = useState("");
+  
   const { id } = useParams();
   const taskEdit = useSelector(state => state.data).find(el => el.id == id);
+  const [task, setTask] = useState(taskEdit.task);
+  const [user, setUser] = useState(taskEdit.user);
+  
   const navigate = useNavigate();
   const dispatch=useDispatch()
   const handleClick = () => {
@@ -26,13 +28,13 @@ function EditTask() {
                   <input
                     type="text"
                     className="form-control add-task m-1"
-                    placeholder={taskEdit.task}
+                    value={task}
                     onChange={e => setTask(e.target.value)}
                   />
                   <input
                     type="text"
                     className="form-control add-task m-1 "
-                    placeholder={taskEdit.user}
+                    value={user}
                     onChange={e => setUser(e.target.value)}
                   />
                   <button
